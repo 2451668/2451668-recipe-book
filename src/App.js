@@ -4,6 +4,7 @@
 
 import React from "react"; // needed for using JSX
 import "./App.css"; // needed for my stylesheet
+import RecipeList from "./RecipeList"; // recipe list component
 
 
 // root component for React applications; acts as a container for the whole app
@@ -13,6 +14,7 @@ function App() {
   return (
     <div className="App">
       <h1>Local Recipes</h1>
+      <RecipeList/> 
     </div>
   );
 }

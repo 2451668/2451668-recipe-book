@@ -10,14 +10,22 @@ function RecipeList() {
 
     // this is where I'll handle filtering and searching
     const [searchTerm, setSearchTerm] = useState('');  // this State holds the current search term; starts empty since you need to type something first
+    const [filter, setFilter] = useState('') // sets state to hold current filter with empty meaning no filter is currently applied
 
     const handleSearchChange = (event) => {
         setSearchTerm(event.target.value);  // updates search as you type
     };
 
-    const filteredRecipes = data.filter(recipe => 
-        recipe.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );  // filters based on the search term, and so has to match the name prop. The result is 'filteredRecipes', an array of objects matching the search criteria, and is what is mapped to the Recipe comp. for display. Got help at https://stackoverflow.com/questions/44469548/es6-filter-data-with-case-insensitive-term with making the searches case insensitive
+    const handleFilterChange = (category) => {
+        setFilter(category); // Update filter as a dietary category is selected
+    };
+    
+    const filteredRecipes = data.filter(recipe => {
+        return (
+            (filter === '' || recipe.dietary.includes(filter)) &&
+            recipe.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+    });  // filters based on the search term in addition to diet category. The result is 'filteredRecipes', an array of objects matching the search criteria, and is what is mapped to the Recipe comp. for display. Got help at https://stackoverflow.com/questions/44469548/es6-filter-data-with-case-insensitive-term with making the searches case insensitive
 
     return (
         <div>
@@ -28,6 +36,12 @@ function RecipeList() {
                 onChange={handleSearchChange}
                 style={{ margin: "10px", padding: "5px" }}
             />
+            
+            <button onClick={() => handleFilterChange('')}>All</button>
+            <button onClick={() => handleFilterChange('vegetarian')}>Vegetarian</button>
+            <button onClick={() => handleFilterChange('vegan')}>Vegan</button>
+            <button onClick={() => handleFilterChange('gluten-free')}>Gluten-Free</button>
+
             {filteredRecipes.map(recipe => (
                 // will use the map() function to iterate each item in the array and render a recipe comp. for each one
 

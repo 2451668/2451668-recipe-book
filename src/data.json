@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Chakalaka",
+        "cookingTime": 35,
+        "dietary": ["vegetarian"]
+    },
+    {
+        "id": 2,
+        "name": "Durban Curry",
+        "cookingTime": 50,
+        "dietary": ["vegetarian"]
+    },
+    {
+        "id": 3,
+        "name": "Bunny Chow",
+        "cookingTime": 60,
+        "dietary": ["gluten-free"]
+    },
+    {
+        "id": 4,
+        "name": "Boerewors",
+        "cookingTime": 30,
+        "dietary": ["gluten-free"]
+    },
+    {
+        "id": 5,
+        "name": "Cape Malay Curry",
+        "cookingTime": 45,
+        "dietary": ["vegan"]
+    },
+    {
+        "id": 6,
+        "name": "Morogo",
+        "cookingTime": 25,
+        "dietary": ["vegan"]
+    }
+]

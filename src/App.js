@@ -1,25 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
+// 2451668 - Thabang Maleka - WSOA4175A - recipe book application
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+/* disclaimer - as per the brief I'll feature some commentary throughout the build. It might get a little wordy or redundant at times, but I feel for my own sake I'll need the context and annotations - to really understand what it is I'm doing. I've seen the CBO and I think I'll be revisiting this build a lot, it being our first proper submission and all. I understand if this leads to penalties in marking.  */
 
-export default App;

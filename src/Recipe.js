@@ -4,20 +4,15 @@ import React, { useState } from "react";
 
 // Defining the Recipe component with props as its parameter
 function Recipe(props) {
-    const [isFavourite, setFavourite] = useState(false); // Nothing is favoured by default
-
-    const toggleFavourite = () => {
-        setFavourite(!isFavourite); // Toggles between true or false
-    };
     // Styling will be applied to a particular recipe if it's favoured, otherwise, generic
 
     return (
-        <div className={`recipe ${isFavourite ? 'favourite' : ''}`} >
+        <div className={`recipe ${props.isFavourite ? 'favourite' : ''}`} >
             <h2>{props.name}</h2>
             <p>Cooking Time : {props.cookingTime} minutes</p>
             <p>Dietary : {props.dietary.join(", ")}</p>
-            <button onClick={toggleFavourite}>
-                {isFavourite ? 'Unfavourite' : 'Favourite'}
+            <button onClick={props.toggleFavourite}>
+                {props.isFavourite ? 'Unfavourite' : 'Favourite'}
             </button>
         </div>
     );

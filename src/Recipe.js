@@ -1,8 +1,8 @@
-/* going to define the recipe component here. This component will be for displaying data about a single recipe. I'll use props to pass data and states to manage it*/
+/* going to define the recipe component here. This component will be for displaying data about a single recipe. I'll use props to pass data and states to manage it.*/
 
 import React from "react";
 
-// defining the recipe comp with props as its parameter
+// defining the recipe comp. with props as its parameter
 
 function Recipe(props) {
     return (

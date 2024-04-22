@@ -3,8 +3,11 @@
 import React, { useState } from "react";
 import Recipe from "./Recipe"; // importing the recipe component to use
 import data from "./data.json"; // importing the JSON data
+import './Recipe.css'
 
 function RecipeList() {
+
+    
 
     const [searchTerm, setSearchTerm] = useState('');
     // state for holding current search term; starts empty until populated
@@ -43,21 +46,27 @@ function RecipeList() {
     // filters based on the search term in addition to diet category. The result is 'filteredRecipes', an array of objects matching the search criteria, and is what is mapped to the Recipe comp. for display. Got help at https://stackoverflow.com/questions/44469548/es6-filter-data-with-case-insensitive-term with making the searches case insensitive
 
     return (
-        <div>
-            <input
-                type="text"
-                placeholder="Search recipes..."
-                value={searchTerm}
-                onChange={handleSearchChange}
-                style={{ margin: "10px", padding: "5px" }}
-            />
-            <button onClick={() => handleFilterChange('')}>All</button>
-            <button onClick={() => handleFilterChange('vegetarian')}>Vegetarian</button>
-            <button onClick={() => handleFilterChange('vegan')}>Vegan</button>
-            <button onClick={() => handleFilterChange('gluten-free')}>Gluten-Free</button>
-            <button onClick={toggleShowFavourites}>
-                {showFavourites ? 'Show All' : 'Show Favourites'}
-            </button>
+        <div className="recipe-list">
+            <div className="search-bar">
+                <input
+                    type="text"
+                    placeholder="Search recipes..."
+                    value={searchTerm}
+                    onChange={handleSearchChange}
+                    style={{ width: "90%", padding: "10px", borderRadius: "20px", border: "1px solid #ccc" }}
+                />
+            </div>
+    
+            <div className="button-bar">
+                <button onClick={() => handleFilterChange('')} className={!filter ? 'active' : ''}>All</button>
+                <button onClick={() => handleFilterChange('vegetarian')} className={filter === 'vegetarian' ? 'active' : ''}>Vegetarian</button>
+                <button onClick={() => handleFilterChange('vegan')} className={filter === 'vegan' ? 'active' : ''}>Vegan</button>
+                <button onClick={() => handleFilterChange('gluten-free')} className={filter === 'gluten-free' ? 'active' : ''}>Gluten-Free</button>
+                <button onClick={toggleShowFavourites} className={showFavourites ? 'active' : ''}>
+                    {showFavourites ? 'Show All' : 'Show Favourites'}
+                </button>
+            </div>
+    
             {filteredRecipes.map(recipe => (
                 // will use the map() function to iterate each item in the array and render a recipe comp. for each one, assuming it meets whichever search criteria
                 <Recipe
@@ -76,4 +85,12 @@ function RecipeList() {
 
 export default RecipeList;
 
+/* references and learning */
 
+// https://www.w3schools.com/react/default.asp
+// https://www.w3schools.com/react/react_components.asp
+// https://www.w3schools.com/react/react_class.asp
+// https://react.dev/learn
+// https://www.youtube.com/watch?v=2-crBg6wpp0
+// https://legacy.reactjs.org/docs/getting-started.html
+// https://www.openai.com

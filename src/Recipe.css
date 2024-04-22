@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+  
+.App {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 900px;
+    width: 500px;
+    overflow: hidden;
+    background: #e0b6b6;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.mobile-screen::-webkit-scrollbar {
+    display: none;
+}
+
+.mobile-screen {
+    height: 100%;
+    overflow-y: auto;
+    background: #ffffff;
+    border-radius: 20px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+  
+.top-bar {
+    background-color: #009688;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.5rem;
+}
+  
+.recipe {
+    margin: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+  
+.recipe-content {
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+  
+.recipe:nth-child(odd) {
+    background-color: #FFECB3;
+}
+  
+.recipe:nth-child(even) {
+    background-color: #C8E6C9;
+}
+  
+.navigation-bar {
+    background-color: #333;
+    color: rgb(255, 203, 203);
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 375px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+  
+.navigation-bar button {
+    background: none;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 1rem;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+  
+.navigation-bar button.active {
+    background-color: #4CAF50;
+    color: white;
+}
+  
+.recipe-list {
+    padding-bottom: 70px;
+}
+
+.search-bar, .button-bar {
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+.button-bar {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.button-bar button {
+    background: none;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.button-bar button.active {
+    background-color: #4CAF50;
+}

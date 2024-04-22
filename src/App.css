@@ -1,16 +1,17 @@
-.App {
-  text-align: center;
+/* Importing Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Global styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffdfba; /* Soft goldish yellow for the page background */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Add some padding at the top of the body to avoid overlap with the fixed header */
+body {
+  padding-top: 70px; /* Adjust this value based on your actual header height */
 }
 
 /* some styling for the favouring effect */
